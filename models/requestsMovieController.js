@@ -3,10 +3,10 @@ const requestsMovieController = (function () {
 	//get all movies
     const getAllMovies = async function(url){
 		try{
-			let response = await fetch(url, {method:"GET"});
-			let movies = await response.json();
-			
-			console.log(movies);
+			let response = fetch(url, {method:"GET"});
+			let movies = await response
+			//console.log(movies, await movies.json());
+			return  movies;
 		}
 		catch(error){
 			console.log(error);
