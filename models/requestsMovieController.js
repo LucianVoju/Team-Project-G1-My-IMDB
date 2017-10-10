@@ -38,10 +38,24 @@ const requestsMovieController = (function () {
 		}
 	};
 	
+	//delete movies
+	const deleteMovie = async function(url,id){
+		try{
+			let response = await fetch(`${url}/${id}`,{method: "DELETE"});
+			let movies = await response.json();
+			
+			console.log(movies);
+		}
+		catch(error){
+			console.log(error);
+		}
+	};
+	
 	return {
 		getAllM: getAllMovies,
 		searchMovie:searchMovie,
-		getSpecificMovie:getSpecificMovie
-	}
+		getSpecificMovie:getSpecificMovie,
+		deleteMovie:deleteMovie
+	};
 		
 })();
