@@ -51,7 +51,8 @@ const requestsMovieController = (function () {
 		}
 	};
 	
-	return {
+	return {     
+		
 		getAllM: getAllMovies,
 		searchMovie:searchMovie,
 		getSpecificMovie:getSpecificMovie,
