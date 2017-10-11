@@ -22,7 +22,7 @@ const UIController = (function () {
             newHtml = newHtml.replace("%rating%",movieArr.imdbRating);
             
             
-            document.getElementById("body").insertAdjacentHTML("afterbegin",newHtml);
+            document.getElementById("article-container").insertAdjacentHTML("afterbegin",newHtml);
         }
     }
 })();
