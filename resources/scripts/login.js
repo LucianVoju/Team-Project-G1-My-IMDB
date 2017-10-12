@@ -20,11 +20,14 @@ $(document).ready(function(){
             success: function(response){
                 console.log(response);
                 document.cookie = "loginToken=" + response.accessToken + ";";
-                let cookie = document.cookie;
-                console.log(cookie);
+                window.location.href= "index.html";
+            },
+            error: function(){
+                alert("User not found/wrong password");
             }
          });
         }
+    
     });  
 
 });
