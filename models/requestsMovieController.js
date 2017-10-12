@@ -5,8 +5,8 @@ const requestsMovieController = (function () {
 		try{
 			let response = await fetch(url, {method:"GET"});
 			let movies = await response.json();
-			
-			console.log(movies);
+			//console.log(movies, await movies.json());
+			return  movies;
 		}
 		catch(error){
 			console.log(error);
@@ -17,8 +17,8 @@ const requestsMovieController = (function () {
 		try{
 			let response = await fetch(`${url}?${field}=${param}`, {method:"GET"});
 			let movies = await response.json();
-			
 			console.log(movies);
+			return movies;
 		}
 		catch(error){
 			console.log(error);
