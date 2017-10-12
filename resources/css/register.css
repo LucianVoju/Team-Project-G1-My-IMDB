@@ -48,3 +48,6 @@ input:focus {
 .hidden {
 	display: none;
 }
+#errorList {
+    color:red;
+}
