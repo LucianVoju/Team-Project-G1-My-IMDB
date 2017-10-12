@@ -1,6 +1,9 @@
 /*global UIController*/
 /*global requestsMovieController*/
-const controller = (function (uiCtrl,requestCtrl) {
+/*global userController*/
+
+
+const controller = (function (uiCtrl,requestCtrl,userCtrl) {
 	const url = "https://ancient-caverns-16784.herokuapp.com/movies";
 	const DOM = uiCtrl.getDOMstrings();
 	
@@ -29,6 +32,7 @@ const controller = (function (uiCtrl,requestCtrl) {
 			});
 		};
 	
+	//search and display movies based on user input
 	let searchAndDisplayMovies = function(){
 		let input;
 		
@@ -40,7 +44,7 @@ const controller = (function (uiCtrl,requestCtrl) {
 		uiCtrl.clearSearchInput();
 	};
 	
-	
+	//display the movies on page load
 	let displayMovie = async function(){
 			let movieArr = await requestCtrl.getAllM(url);
 			console.log(movieArr);
@@ -48,9 +52,12 @@ const controller = (function (uiCtrl,requestCtrl) {
 				uiCtrl.displayMovies(movie);	
 			});
 		}
-		
+	
+	let consoleLogLogin = async function() {
+		let response = await userCtrl.loginUser(url);
+		console.log(response);
+	}	
 	return{
-		
 		
 		getSpecificMovie: function(){
 			requestCtrl.getSpecificMovie(url,"59d79f05b0b596040599aac9");
@@ -58,9 +65,10 @@ const controller = (function (uiCtrl,requestCtrl) {
 		init:function() {
 			setupEventListeners();
 			displayMovie();
+			consoleLogLogin();
 		}
 	};	
 	
-})(UIController, requestsMovieController);
+})(UIController, requestsMovieController, userController);
 
 window.addEventListener("load",controller.init);
