@@ -31,6 +31,14 @@
        
        var movieUrl = newAMovieElem.querySelector("#article-url");
        movieUrl.href = blogBaseUrl + "/movies/movie.html?id=" + movies.models[i].id;
+       
+       var movieDelete = newAMovieElem.querySelector(".movie-delete");
+       movieDelete.id = response[i].id;
+       movieDelete.addEventListener("click", deleteMovie);
+       
+       var movieEdit = newAMovieElem.querySelector(".movie-edit");
+       movieEdit.id = response[i].id;
+       movieEdit.addEventListener("click", editMovie);
 
        main.appendChild(newAMovieElem);
 

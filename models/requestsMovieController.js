@@ -17,7 +17,7 @@ const requestsMovieController = (function () {
 		try{
 			let response = await fetch(`${url}?${field}=${param}`, {method:"GET"});
 			let movies = await response.json();
-			
+			console.log(movies);
 			return movies;
 		}
 		catch(error){
@@ -38,7 +38,7 @@ const requestsMovieController = (function () {
 		}
 	};
 	
-	//delete movies
+	//delete movie
 	const deleteMovie = async function(url,id){
 		try{
 			let response = await fetch(`${url}/${id}`,{method: "DELETE"});
@@ -51,8 +51,7 @@ const requestsMovieController = (function () {
 		}
 	};
 	
-	return {     
-		
+	return {   
 		getAllM: getAllMovies,
 		searchMovie:searchMovie,
 		getSpecificMovie:getSpecificMovie,
