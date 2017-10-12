@@ -2,15 +2,45 @@
 /*global requestsMovieController*/
 const controller = (function (uiCtrl,requestCtrl) {
 	const url = "https://ancient-caverns-16784.herokuapp.com/movies";
-	const DOMstrings = uiCtrl.getDOMstrings();
+	const DOM = uiCtrl.getDOMstrings();
 	
-	/*let movieArr= {
-            Title: "Star Wars: Episode IV - A New Hope",
-            Year: "1977",
-            Genre: "Action, Adventure, Fantasy",
-            Poster: "https://images-na.ssl-images-amazon.com/images/M/MV5BYTUwNTdiMzMtNThmNS00ODUzLThlMDMtMTM5Y2JkNWJjOGQ2XkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_SX300.jpg",
-            imdbRating: "8.7",
-	}*/
+	
+	let setupEventListeners = function() {
+		document.querySelector(DOM.searchBtn).addEventListener("click", searchAndDisplayMovies);
+		
+		document.addEventListener('keypress', function(event) {
+            if (event.keyCode === 13 || event.which === 13) {
+                searchAndDisplayMovies();
+            }
+        });
+	}
+	
+	let searchAndDisplay = function(url,searchType,searchInput){
+			
+		let box = document.querySelector(DOM.articleContainer);
+		while (box.lastChild) {
+		  box.removeChild(box.lastChild);
+		}
+		
+		requestCtrl.searchMovie(url,searchType, searchInput).then(response => {
+				response.results.forEach(res=>{
+					uiCtrl.displayMovies(res);
+				});
+			});
+		};
+	
+	let searchAndDisplayMovies = function(){
+		let input;
+		
+		//get the selected field and input text
+		input = uiCtrl.getInput();
+		//get the movie array from api and display it to thr ui
+		searchAndDisplay(url,input.type,input.description);
+		//reset the text box
+		uiCtrl.clearSearchInput();
+	};
+	
+	
 	let displayMovie = async function(){
 			let movieArr = await requestCtrl.getAllM(url);
 			console.log(movieArr);
@@ -21,19 +51,16 @@ const controller = (function (uiCtrl,requestCtrl) {
 		
 	return{
 		
-		searchMovie:function(){
-			requestCtrl.searchMovie(url,"Title", "Star").then(response => {
-				console.log(response);
-			});
-		},
+		
 		getSpecificMovie: function(){
 			requestCtrl.getSpecificMovie(url,"59d79f05b0b596040599aac9");
 		},
 		init:function() {
+			setupEventListeners();
 			displayMovie();
 		}
 	};	
 	
 })(UIController, requestsMovieController);
 
-controller.init();
+window.addEventListener("load",controller.init);

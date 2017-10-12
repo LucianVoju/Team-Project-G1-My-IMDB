@@ -3,8 +3,12 @@ const UIController = (function () {
     
     let DOMstrings= {
         movieTitle: "#movie-title",
-        article:"movie"
-    }
+        article:"movie",
+        searchType:".select-search-field",
+        searchParam: ".search-input",
+        searchBtn:".search-button",
+        articleContainer:"#article-container"
+    };
     
     return {
         getDOMstrings:function(targetContainer){
@@ -21,8 +25,20 @@ const UIController = (function () {
             newHtml = newHtml.replace("%year%",movieArr.Year);
             newHtml = newHtml.replace("%rating%",movieArr.imdbRating);
             
-            
+            //insert the HTML into the DOM
             document.getElementById("article-container").insertAdjacentHTML("afterbegin",newHtml);
+        },
+        
+        getInput:function(){
+            return {
+                type:document.querySelector(DOMstrings.searchType).value,
+                description: document.querySelector(DOMstrings.searchParam).value
+            };
+        },
+        
+        clearSearchInput: function() {
+            let input = document.querySelector(DOMstrings.searchParam)
+            input.value="";
         }
     }
 })();
