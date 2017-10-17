@@ -43,8 +43,8 @@ const UIController = (function () {
                     </ul>\
                 </article>';
             //replace html string with data from backend
-            newHtml = html.replace("%movieTitle%", movieArr.Title);
-            newHtml = newHtml.replace("%posterUrl%", movieArr.Poster);
+            newHtml = html.replace("%movieTitle%", movieArr.Title || "Title not awaible");
+            newHtml = newHtml.replace("%posterUrl%", movieArr.Poster || "http://via.placeholder.com/330x446");
             newHtml = newHtml.replace("%genre%", movieArr.Genre);
             newHtml = newHtml.replace("%year%", movieArr.Year);
             newHtml = newHtml.replace("%rating%", movieArr.imdbRating);
