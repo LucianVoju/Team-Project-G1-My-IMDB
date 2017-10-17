@@ -50,7 +50,7 @@ nav {
     border: 1px solid SlateGray;
 }
 
-.read-more{
+.read-more, .edit-movie, .delete-movie{
     list-style-type: none;
 }
 .movie-delete, .movie-edit, #movie-url {

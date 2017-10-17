@@ -1,24 +1,20 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="../vendors/css/normalize.css" type="text/css" />
         <link rel="stylesheet" href="../resources/css/index.css" type="text/css" />
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="../models/Movies.js"></script>
         <script type="text/javascript" src="../models/requestsMovieController.js"></script>
         <script type="text/javascript" src="../models/UIController.js"></script>
         <script type="text/javascript" src="../models/userController.js"></script>
         <script type="text/javascript" src="../models/controller.js"></script>
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
         <header>
-            <figure>
-                <img class="logo-imdb" src ="http://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png" alt="IMDb logo"/>
-            </figure>
-            <nav >
-                <select class="select-search-field" >
+            <nav>
+                <select class="select-search-field">
                     <option value="Title" selected >Title</option>
                     <option value="Year">Year</option>
                     <option value="Runtime">Runtime</option>
@@ -33,13 +29,13 @@
                 </select>
                 <input type="text" placeholder="search movie" class="search-input">
                 <button class="search-button">GO</button>
+                <a href="addmovie.html">Add Movie</a>
+
             </nav>
         </header>
-        <div class="clear"></div>
-        <div id="article-container" class="row" >
-          
+        <div id="article-container">
+            
         </div>
-        <div class="clear"></div>
          <!--<article class="movie">
             <h2><a id="movie-title" href="#">Star Wars: Episode IV - A New Hope</a></h2>
             <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BYTUwNTdiMzMtNThmNS00ODUzLThlMDMtMTM5Y2JkNWJjOGQ2XkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_SX300.jpg"></img>
@@ -47,11 +43,7 @@
             <p id="movie-year">1977</p>
             <p id="movie-rating">8.7</p>
             <ul>
-                <li class="read-more"><a id="movie-url" href="">Read more</a>
-                    <button type="submit" class="movie-edit">Edit</button>
-                    <button type="submit" class="movie-delete">Delete</button>
-                </li>
-                
+                <li class="read-more"><a id="movie-url" href="">Read more</a></li>
             </ul>
         </article>-->
     </body>
