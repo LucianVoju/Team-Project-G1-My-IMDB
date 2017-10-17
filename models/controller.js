@@ -121,3 +121,4 @@ const controller = (function (uiCtrl, requestCtrl, userCtrl) {
 })(UIController, requestsMovieController, userController);
 
 window.addEventListener("load", controller.init);
+

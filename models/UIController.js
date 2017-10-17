@@ -1,5 +1,4 @@
 
-
 /*jshint multistr: true */
 const UIController = (function () {
     //setup the dom strings for further elements acces
