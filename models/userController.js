@@ -9,9 +9,10 @@ const userController = (function(){
     
     
     return {
-        loginUser: async function(url) {
+        loginUser: async function() {
+            let url = "https://ancient-caverns-16784.herokuapp.com"
             try{
-                let response =  await fetch(`${url}/auth/login`,{method:"POST",Payload:{username:"test", password:"test"}  });
+                let response =  await fetch(`${url}/auth/login`,{method:"POST",contentType: 'application/x-www-form-urlencoded',data:{username:"test", password:"test"}  });
                 let loginResponse = await response.json();
                 
                 return loginResponse

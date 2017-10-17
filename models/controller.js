@@ -6,12 +6,27 @@
 const controller = (function (uiCtrl,requestCtrl,userCtrl) {
 	const url = "https://ancient-caverns-16784.herokuapp.com/movies";
 	const DOM = uiCtrl.getDOMstrings();
+	let paginationData;
+	let paginationRange = function (pageNum, lastPage) {
+            const currentPage = pageNum,
+            last = lastPage,
+            delta = 2,
+            left = currentPage - delta,
+            right = currentPage + delta,
+            range = [];
+            for (let i = 1; i <= last; i++) {
+            if ( i >= left && i <= right) {
+                range.push(i);
+                    }
+                }
+                return range;
+            }
 	
 	
 	let setupEventListeners = function() {
 		document.querySelector(DOM.searchBtn).addEventListener("click", searchAndDisplayMovies);
 		
-		document.addEventListener('keypress', function(event) {
+		document.querySelector(DOM.searchParam).addEventListener('keypress', function(event) {
             if (event.keyCode === 13 || event.which === 13) {
                 searchAndDisplayMovies();
             }
@@ -29,6 +44,8 @@ const controller = (function (uiCtrl,requestCtrl,userCtrl) {
 				response.results.forEach(res=>{
 					uiCtrl.displayMovies(res);
 				});
+				paginationData = response.pagination;
+				console.log(paginationData);
 			});
 		};
 	
@@ -51,12 +68,9 @@ const controller = (function (uiCtrl,requestCtrl,userCtrl) {
 			movieArr.results.forEach((movie)=>{
 				uiCtrl.displayMovies(movie);	
 			});
+			
 		}
-	
-	let consoleLogLogin = async function() {
-		let response = await userCtrl.loginUser(url);
-		console.log(response);
-	}	
+			
 	return{
 		
 		getSpecificMovie: function(){
@@ -65,7 +79,7 @@ const controller = (function (uiCtrl,requestCtrl,userCtrl) {
 		init:function() {
 			setupEventListeners();
 			displayMovie();
-			consoleLogLogin();
+			//consoleLogLogin();
 		}
 	};	
 	
