@@ -1,25 +1,33 @@
 /*global $*/
 $(document).ready(function(){
-    $("form#loginForm").submit(function(){
-    const root = "https://ancient-caverns-16784.herokuapp.com";
-    let user = document.getElementsByName("uname").value;
-    let password = document.getElementsByName("psw").value;
-     if (user && password) {
+    $("form#loginForm").submit(function(e){
+        e.preventDefault();
+
+    let root = "https://ancient-caverns-16784.herokuapp.com/auth/login";
+    let username = document.getElementsByName("uname")[0].value;
+    let password = document.getElementsByName("psw")[0].value;
+     if (username == "" || password == "") {
+         $("input").addClass("error");
+     } else {
          $.ajax({
-             url: root + "/auth/login",
-             type: "POST",
+             url: root,
+             method: "POST",
              data: {
-                 username: "alig25",
-                 password: "1985"
+                 username: username,
+                 password: password
              },
-             headers: {
-                 "Content-type":"application/x-www-urlencoded",
-             },
-            success: function(data){
-                console.log(data);
+             contentType: "application/x-www-form-urlencoded",
+            success: function(response){
+                console.log(response);
+                document.cookie = "loginToken=" + response.accessToken + ";";
+                window.location.href= "index.html";
+            },
+            error: function(){
+                alert("User not found/wrong password");
             }
          });
-     }
-   //gfgfgf 
-});   
+        }
+    
+    });  
+
 });

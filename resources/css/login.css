@@ -1,6 +1,8 @@
 #container{
     width: 50%;
     border: 3px solid green;
+    margin: 0 auto;
+    text-align: center;
 }
 
 input[type=text], input[type=password] {
@@ -18,9 +20,13 @@ button {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
 }
 
 button:hover {
     opacity: 0.8;
+}
+
+error {
+    border: 2px solid red;
+    box-shadow: 0 0 3px red;
 }
