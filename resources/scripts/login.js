@@ -25,6 +25,7 @@ $(document).ready(function(){
             error: function(){
                 alert("User not found/wrong password! Please register if you didn't!");
             }
+            
          });
         }
     

@@ -35,16 +35,16 @@ const UIController = (function () {
                             <a class="movie-url" href="#">Read more</a>\
                         </li>\
                         <li class="edit-movie">\
-                            <a class="edit-a" href="#" data-movieid="%movieid%">EditMovie</a>\
+                            <a class="edit-a movie-edit" href="#" data-movieid="%movieid%">EditMovie</a>\
                         </li>\
                         <li class="delete-movie">\
-                            <a class="delete-a" href="#"  data-movieid="%movieid%">DeleteMovie</a>\
+                            <a class="delete-a movie-delete" href="#"  data-movieid="%movieid%">DeleteMovie</a>\
                         </li>\
                     </ul>\
                 </article>';
             //replace html string with data from backend
-            newHtml = html.replace("%movieTitle%", movieArr.Title);
-            newHtml = newHtml.replace("%posterUrl%", movieArr.Poster);
+            newHtml = html.replace("%movieTitle%", movieArr.Title || "Title not awaible");
+            newHtml = newHtml.replace("%posterUrl%", movieArr.Poster || "http://via.placeholder.com/330x446");
             newHtml = newHtml.replace("%genre%", movieArr.Genre);
             newHtml = newHtml.replace("%year%", movieArr.Year);
             newHtml = newHtml.replace("%rating%", movieArr.imdbRating);

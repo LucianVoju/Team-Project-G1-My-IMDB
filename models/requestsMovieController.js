@@ -39,23 +39,23 @@ const requestsMovieController = (function () {
 	};
 	
 	//delete movie
-	const deleteMovie = async function(url,id){
-		try{
-			let response = await fetch(`${url}/${id}`,{method: "DELETE"});
-			let movies = await response.json();
+	// const deleteMovie = async function(url,id){
+	// 	try{
+	// 		let response = await fetch(`${url}/${id}`,{method: "DELETE"});
+	// 		let movies = await response.json();
 			
-			console.log(movies);
-		}
-		catch(error){
-			console.log(error);
-		}
-	};
+	// 		console.log(movies);
+	// 	}
+	// 	catch(error){
+	// 		console.log(error);
+	// 	}
+	// };
 	
 	return {   
 		getAllM: getAllMovies,
 		searchMovie:searchMovie,
 		getSpecificMovie:getSpecificMovie,
-		deleteMovie:deleteMovie
+		//deleteMovie:deleteMovie
 	};
 		
 })();
