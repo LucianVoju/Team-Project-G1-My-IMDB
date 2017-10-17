@@ -35,10 +35,10 @@ const UIController = (function () {
                             <a class="movie-url" href="#">Read more</a>\
                         </li>\
                         <li class="edit-movie">\
-                            <a class="edit-a" href="#" data-movieid="%movieid%">EditMovie</a>\
+                            <a class="edit-a movie-edit" href="#" data-movieid="%movieid%">EditMovie</a>\
                         </li>\
                         <li class="delete-movie">\
-                            <a class="delete-a" href="#"  data-movieid="%movieid%">DeleteMovie</a>\
+                            <a class="delete-a movie-delete" href="#"  data-movieid="%movieid%">DeleteMovie</a>\
                         </li>\
                     </ul>\
                 </article>';
