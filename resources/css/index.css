@@ -53,6 +53,9 @@ nav {
 .read-more, .edit-movie, .delete-movie{
     list-style-type: none;
 }
+.log-out{
+
+}
 .movie-delete, .movie-edit, #movie-url {
     background-color: #4CAF50;
     color: white;
