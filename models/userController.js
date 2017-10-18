@@ -18,10 +18,10 @@ const userController = (function(){
     return {
         loginUser: async function(url) {
             try{
-                let response =  await fetch(`${url}/auth/login`,{method:"POST",Payload:{username:"test", password:"test"}  });
+                let response =  await fetch('${url}/auth/login',{method:"POST",Payload:{username:"test", password:"test"}  });
                 let loginResponse = await response.json();
                 
-                return loginResponse
+                return loginResponse;
             }
             catch(error) {
                 console.log(error)
