@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../vendors/css/normalize.css" type="text/css" />
+        <title>IMDb</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
         <link rel="stylesheet" href="../resources/css/index.css" type="text/css" />
-        <link rel="stylesheet" href="../resources/css/main-page-style-test.css" type="text/css" />
         <script type="text/javascript" src="../models/Movies.js"></script>
         <script type="text/javascript" src="../models/requestsMovieController.js"></script>
         <script type="text/javascript" src="../models/UIController.js"></script>
@@ -12,7 +13,12 @@
     </head>
     <body>
         <header>
-            <nav>
+            <figure>
+                <img class = "logo-imdb" src ="http://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png" alt="IMDb logo"/>
+            </figure>
+            <h1 class = "h1-header">Welcome to my IMDB</h1>
+        </header>
+            <nav class = "navigation-bar">
                 <select class="select-search-field">
                     <option value="Title" selected >Title</option>
                     <option value="Year">Year</option>
@@ -27,10 +33,10 @@
                     <option value="Type">Type</option>
                 </select>
                 <input type="text" placeholder="search movie" class="search-input">
-                <button class="search-button">GO</button>
+                <button class="search-button glyphicon glyphicon-search"></button>
                 <button id = "logout" class="log-out">Log Out</button>
             </nav>
-        </header>
+        
         <div id="article-container">
             
         </div>
@@ -47,5 +53,17 @@
                 <li class="read-more"><a id="movie-url" href="">Read more</a></li>
             </ul>
         </article>-->
+        <footer class = "footer-class">
+            <section>
+                <ul class = "privacy-terms">
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Conditions of use</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+            </section>
+            <section>
+                <p>Copyright &#169; 2017 <!--Grupa 1's name--></p>
+            </section>
+        </footer>
     </body>
 </html>
