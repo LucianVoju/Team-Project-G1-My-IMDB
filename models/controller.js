@@ -134,7 +134,7 @@ const controller = (function (uiCtrl, requestCtrl, userCtrl) {
 		init: function () {
 			setupEventListeners();
 			displayMovie();
-			consoleLogLogin();
+			//consoleLogLogin();
 		}
 	};
 
