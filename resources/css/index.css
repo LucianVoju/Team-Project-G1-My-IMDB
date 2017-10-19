@@ -2,78 +2,159 @@ html {
     font-family: sans-serif;
 }
 * {
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .clear {
 	clear: both;
 }
-.logo-imdb{
-    width: 10%;
+
+body{
+    background-color: #e9ebee;
 }
 
-nav {
-    display: flex;   
-    height: 25%;
+.logo-imdb{
+    position: absolute;
+    right: 5px;
+    width: 9%;
+}
+header {
+	background-color: rgba(147, 222, 176, 0.98);
+	background-size: cover;
+	width: 66%;
+	height: 85px;
+	position: fixed;
+	top: 0px;
+	left: 17%;
+	z-index: 1;
+}
+.h1-header{
+	position: relative;
+	top: 0px;
+	color: SlateGray;
+	padding-bottom: 40px;
+}
+
+.navigation-bar {
+    background-color: rgba(40, 134, 41, 0.73);
+	background-size: cover;
+	font-weight: bold;
+	display: inline-block;
+	width: 66%;
+	height: 45px;
+	position: fixed;
+	top: 85px;
+	left: 17%;
+	z-index: 1;
+}
+
+.log-out{
+    position: absolute;
+    right: 5px;
 }
 
 .select-search-field{
     width: -50%;
    
 }
-[class*="col-"] {
-    float: left;
-    padding: 15px;
-}
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
 
 #article-container{
+   
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 2;
+    -webkit-column-gap: 10px; /* Chrome, Safari, Opera */
+    -moz-column-gap: 10px; /* Firefox */
+    column-gap: 10px;
+    -webkit-column-width: 200px; /* Chrome, Safari, Opera */
+    -moz-column-width: 200px; /* Firefox */  
+    column-width: 100px;
+   
+    position: relative;
+	top: 140px;
+	left: 17%;
+	width: 40%;
 
 }
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+
+.movie{
+    
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 3px;
+    border-width: 0;
+    width: 250px;
+    height: 385px;
+    padding: 0;
+    padding-bottom: 30px;
+    color: #222;
+    text-decoration: none;
+    overflow: hidden;
+    box-shadow: 0 1px 5px -1px rgba(0,0,0,.13);
+    -webkit-transition: box-shadow .15s ease-in-out;
+    -o-transition: box-shadow .15s ease-in-out;
+    transition: box-shadow .15s ease-in-out;
+    text-align: center;
 }
 
-.movie {
-    border: 1px solid SlateGray;
+.movie-title, .-genremovie, .movie-rating, .movie-year{
+    font-size: 0.7em;
+	position: relative;
+}
+
+.poster-url{
+    width: 47%;
 }
 
 .read-more, .edit-movie, .delete-movie{
     list-style-type: none;
 }
-.log-out{
 
-}
-.movie-delete, .movie-edit, #movie-url {
+.movie-delete, .movie-edit, .movie-url {
+    font-size: 0.7em;
     background-color: #4CAF50;
     color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
     border: none;
     cursor: pointer;
     width: 25%;
     align-items: center;
 }
 .movie-delete{
+    text-decoration: none;
+    position: absolute;
+    right: 10%;
+    padding: 10px 15px;
+    margin: -10px 0;
     text-align: center;
 }
+.movie-edit{
+    text-decoration: none;
+    position: absolute;
+    right: 40%;
+    padding: 10px 15px;
+    margin: -10px 0;
+    text-align: center;
+}  
+
+.movie-url{
+    text-decoration: none;
+    position: absolute;
+    right: 70%;
+    padding: 10px 15px;
+    margin: -10px 0;
+    text-align: center;
+}
+    
 .movie-delete:hover {
     background-color: black;
     opacity: 0.8;
 }
-#movie-url:hover {
+.movie-url:hover {
     background-color: black;
     opacity: 0.8;
 }
@@ -83,24 +164,13 @@ nav {
     opacity: 0.8;
 }
 
-@media (min-width: 768px) {
-    body > header{
-        display: flex;
-    }
-    .title {
-        display: flex;
-        align-items: center;
-    }
-    
-    article{
-        float: left;
-        width: 25%;
-    }
-    aside{
-        float: right;
-        width: 25%;
-    }
-    footer{
-        clear: both;
-    }
+
+
+.privacy-terms{
+    display: inline;
+}
+
+.footer-class{
+    position: relative;
+    top: 200px;
 }

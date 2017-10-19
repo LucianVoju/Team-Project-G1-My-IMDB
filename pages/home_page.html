@@ -4,38 +4,59 @@
         <title>IMDb</title>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../resources/css/index.css" type="text/css" />
+        <link rel="stylesheet" href="../resources/css/home_page.css" type="text/css" />
+        <script type="text/javascript" src="../models/Movies.js"></script>
+        <script type="text/javascript" src="../models/requestsMovieController.js"></script>
+        <script type="text/javascript" src="../models/UIController.js"></script>
+        <script type="text/javascript" src="../models/userController.js"></script>
+        <script type="text/javascript" src="../models/controller.js"></script>
     </head>
     <body>
         <header>
             <figure>
-                <img src ="http://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png" alt="IMDb logo"/>
+                <img class = "logo-imdb" src ="http://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png" alt="IMDb logo"/>
             </figure>
+            <h1 class = "h1-header">Welcome to my IMDB</h1>
         </header>
-        <nav>
-            <a href ="login.html">Log In</a>
-            <a href ="register.html">Register</a>
+        <nav class = "navigation-bar">
+            <a class = "log-reg" href ="login.html">Log In</a>
+            <a class = "log-reg" href ="register.html">Register</a>
+            <select class="select-search-field">
+                    <option value="Title" selected >Title</option>
+                    <option value="Year">Year</option>
+                    <option value="Runtime">Runtime</option>
+                    <option value="Genre">Genre</option>
+                    <option value="Language">Language</option>
+                    <option value="Country">Country</option>
+                    <option value="Poster">Poster</option>
+                    <option value="imdbRating">imdbRating</option>
+                    <option value="imdbVotes">imdbVotes</option>
+                    <option value="imdbID">imdbID</option>
+                    <option value="Type">Type</option>
+            </select>
+            <input type="text" placeholder="search movie" class="search-input">
+            <button class="search-button glyphicon glyphicon-search"></button>
         </nav>
-        <!-- Search bar -->
-        <section>
-            <form>
-                <input type="text" autocomplete="off" name="q" autofocus placeholder="Find movies...">
-                <button type="button" class="glyphicon glyphicon-search"></button>
-            </form>
-        </section>
-        <section>
+        <div id="article-container">
+            
+        </div>
+        <ul class="pagination">
+            <!--<li class="pagination-item"><a>Prev</a></li>-->
+        </ul>
+         <!--<article class="movie">
+            <h2><a id="movie-title" href="#">Star Wars: Episode IV - A New Hope</a></h2>
+            <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BYTUwNTdiMzMtNThmNS00ODUzLThlMDMtMTM5Y2JkNWJjOGQ2XkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_SX300.jpg"></img>
+            <p id="-genremovie">Action, Adventure, Fantasy</p>
+            <p id="movie-year">1977</p>
+            <p id="movie-rating">8.7</p>
             <ul>
-                <li>
-                    <h4 class="title">Title</h4>
-                    <img src="" class="img"></img>
-                    <p class="year">Year:</p>
-                    <p class="genre">Genre:</p>
-                </li>
+                <li class="read-more"><a id="movie-url" href="">Read more</a></li>
             </ul>
-        </section>
-        <footer>
+        </article>-->
+        <footer class = "footer-class">
             <section>
-                <ul>
+                <ul class = "privacy-terms">
                     <li><a href="#">Contact us</a></li>
                     <li><a href="#">Conditions of use</a></li>
                     <li><a href="#">Privacy policy</a></li>
