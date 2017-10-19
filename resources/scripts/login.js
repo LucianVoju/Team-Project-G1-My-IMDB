@@ -33,8 +33,9 @@ $(document).ready(function(){
     
     });  
 
-  /*  $("button#log-out").on('click',function(){
-    
+
+   $("button#log-out").on('click',function(){
+
       $.ajax({
           url : root + "/auth/logout",
           method: "GET",
@@ -54,5 +55,7 @@ $(document).ready(function(){
               alert("You have to be logged-in in order to log out");
           }
       });
-   });*/
+
+   });
+
 });
