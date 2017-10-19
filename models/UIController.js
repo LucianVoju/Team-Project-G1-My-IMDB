@@ -4,13 +4,14 @@ const UIController = (function () {
     //setup the dom strings for further elements acces
     let DOMstrings = {
         movieTitle: "#movie-title",
-        article: "movie",
+        article: ".movie",
         searchType: ".select-search-field",
         searchParam: ".search-input",
         searchBtn: ".search-button",
-        articleContainer: "#article-container",
+        movieContainer: "#article-container",
         editBtn: ".edit-a",
-        deleteBtn: ".delete-a"
+        deleteBtn: ".delete-a",
+        pagination:"#pagination",
     };
 
     return {
@@ -44,7 +45,7 @@ const UIController = (function () {
                 </article>';
             //replace html string with data from backend
             newHtml = html.replace("%movieTitle%", movieArr.Title || "Title not awaible");
-            newHtml = newHtml.replace("%posterUrl%", movieArr.Poster || "http://via.placeholder.com/330x446");
+            newHtml = newHtml.replace("%posterUrl%", movieArr.Poster || "https://via.placeholder.com/330x446");
             newHtml = newHtml.replace("%genre%", movieArr.Genre);
             newHtml = newHtml.replace("%year%", movieArr.Year);
             newHtml = newHtml.replace("%rating%", movieArr.imdbRating);
@@ -53,7 +54,23 @@ const UIController = (function () {
             //insert the HTML into the DOM
             document.getElementById("article-container").insertAdjacentHTML("afterbegin", newHtml);
         },
-
+        //display pagination
+        displayPagination: function(pagination){
+            
+            let html, newHtml;
+            html = '<li class="pagination-item">\
+                        <i class="ion-arrow-left-c"></i>\
+                        <p>%current% of %last-page%</p>\
+                        <i class="ion-arrow-right-c"></i>\
+                    </li>'
+            //replace html string with data from backend
+            newHtml = html.replace("%current%",pagination.currentPage);
+            newHtml = newHtml.replace("%last-page%",pagination.numberOfPages);
+             //insert the HTML into the DOM
+            
+            document.getElementById("pagination").insertAdjacentHTML("afterbegin", newHtml);
+             
+        },
         //get the users search type and input
         getInput: function () {
             return {

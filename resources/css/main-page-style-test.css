@@ -1,13 +1,13 @@
-ul{
-    list-style-type: none;
-    display:flex;
+
+#pagination li{
+    display: flex;
+    justify-content:space-around;
+    align-items:center;
+    
 }
 
-ul li {
-    margin-left:30px;
-}
-
-ul li:hover{
-    background-color: #555;
-    cursor:pointer;
+.ion-arrow-left-c:hover, 
+.ion-arrow-right-c:hover{
+    cursor: pointer;
+    background-color: red;
 }
