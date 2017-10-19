@@ -27,7 +27,7 @@ const UIController = (function () {
                     <h2>\
                         <a class="movie-title" href="#">%movieTitle%</a>\
                     </h2>\
-                    <img src="%posterUrl%"></img>\
+                    <img class = "poster-url" src="%posterUrl%"></img>\
                     <p class="-genremovie">%genre%</p>\
                     <p class="movie-year">%year%</p>\
                     <p class="movie-rating">%rating%</p>\
@@ -36,10 +36,10 @@ const UIController = (function () {
                             <a class="movie-url" href="#">Read more</a>\
                         </li>\
                         <li class="edit-movie">\
-                            <a class="edit-a movie-edit" href="#" data-movieid="%movieid%">EditMovie</a>\
+                            <a class="edit-a movie-edit" href="#" data-movieid="%movieid%">Edit Movie</a>\
                         </li>\
                         <li class="delete-movie">\
-                            <a class="delete-a movie-delete" href="#"  data-movieid="%movieid%">DeleteMovie</a>\
+                            <a class="delete-a movie-delete" href="#"  data-movieid="%movieid%">Delete Movie</a>\
                         </li>\
                     </ul>\
                 </article>';

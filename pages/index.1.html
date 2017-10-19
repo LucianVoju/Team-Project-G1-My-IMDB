@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-
         <link rel="stylesheet" href="../vendors/css/normalize.css" type="text/css" />
-        <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
-
-        <title>IMDb</title>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
-
         <link rel="stylesheet" href="../resources/css/index.css" type="text/css" />
+        <link rel="stylesheet" href="../resources/css/main-page-style-test.css" type="text/css" />
         <script type="text/javascript" src="../models/Movies.js"></script>
         <script type="text/javascript" src="../models/requestsMovieController.js"></script>
         <script type="text/javascript" src="../models/UIController.js"></script>
@@ -18,12 +12,7 @@
     </head>
     <body>
         <header>
-            <figure>
-                <img class = "logo-imdb" src ="http://ia.media-imdb.com/images/M/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@._V1_.png" alt="IMDb logo"/>
-            </figure>
-            <h1 class = "h1-header">Welcome to my IMDB</h1>
-        </header>
-            <nav class = "navigation-bar">
+            <nav>
                 <select class="select-search-field">
                     <option value="Title" selected >Title</option>
                     <option value="Year">Year</option>
@@ -38,24 +27,16 @@
                     <option value="Type">Type</option>
                 </select>
                 <input type="text" placeholder="search movie" class="search-input">
-                <button class="search-button glyphicon glyphicon-search"></button>
+                <button class="search-button">GO</button>
                 <button id = "logout" class="log-out">Log Out</button>
             </nav>
-        
+        </header>
         <div id="article-container">
             
         </div>
-        <br>
-        <div>
-            <ul id="pagination">
-                <!--<li class="pagination-item"><i class="ion-arrow-left-c"></i></li>
-                <li class="pagination-item"><p>%current% of %last-page%</p></li>
-                <li class="pagination-item"><i class="ion-arrow-right-c"></i></li>-->
-            </ul>
-        </div>
-        
-        
-        
+        <ul class="pagination">
+            <!--<li class="pagination-item"><a>Prev</a></li>-->
+        </ul>
          <!--<article class="movie">
             <h2><a id="movie-title" href="#">Star Wars: Episode IV - A New Hope</a></h2>
             <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BYTUwNTdiMzMtNThmNS00ODUzLThlMDMtMTM5Y2JkNWJjOGQ2XkEyXkFqcGdeQXVyNzQ1ODk3MTQ@._V1_SX300.jpg"></img>
@@ -66,17 +47,5 @@
                 <li class="read-more"><a id="movie-url" href="">Read more</a></li>
             </ul>
         </article>-->
-        <footer class = "footer-class">
-            <section>
-                <ul class = "privacy-terms">
-                    <li><a href="#">Contact us</a></li>
-                    <li><a href="#">Conditions of use</a></li>
-                    <li><a href="#">Privacy policy</a></li>
-                </ul>
-            </section>
-            <section>
-                <p>Copyright &#169; 2017 <!--Grupa 1's name--></p>
-            </section>
-        </footer>
     </body>
 </html>

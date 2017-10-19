@@ -6,7 +6,7 @@ $(document).ready(function(){
     let root = "https://ancient-caverns-16784.herokuapp.com/auth/login";
     let username = document.getElementsByName("uname")[0].value;
     let password = document.getElementsByName("psw")[0].value;
-     if (username == "" || password == "") {
+     if (username == "" || password == "") {      
          $("input").addClass("error");
      } else {
          $.ajax({
@@ -20,10 +20,10 @@ $(document).ready(function(){
             success: function(response){
                 console.log(response);
                 document.cookie = "loginToken=" + response.accessToken + ";";
-                window.location.reload();
+                window.location.href= "index.html";
             },
             error: function(){
-                alert("User not found/wrong password");
+                alert("User not found/wrong password! Please register if you didn't!");
             }
             
          });
