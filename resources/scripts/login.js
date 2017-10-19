@@ -1,16 +1,18 @@
 /*global $*/
 $(document).ready(function(){
-    $("form#loginForm").submit(function(e){
-        e.preventDefault();
-
-    let root = "https://ancient-caverns-16784.herokuapp.com/auth/login";
+    
+    let root = "https://ancient-caverns-16784.herokuapp.com";
     let username = document.getElementsByName("uname")[0].value;
     let password = document.getElementsByName("psw")[0].value;
+ 
+    $("form#loginForm").submit(function(e){
+        e.preventDefault();
+    
      if (username == "" || password == "") {      
          $("input").addClass("error");
      } else {
          $.ajax({
-             url: root,
+             url: root + "/auth/login",
              method: "POST",
              data: {
                  username: username,
@@ -19,7 +21,7 @@ $(document).ready(function(){
              contentType: "application/x-www-form-urlencoded",
             success: function(response){
                 console.log(response);
-                document.cookie = "loginToken=" + response.accessToken + ";";
+                document.cookie = "loginToken=" + response.accesToken + ";";
                 window.location.href= "index.html";
             },
             error: function(){
@@ -31,4 +33,26 @@ $(document).ready(function(){
     
     });  
 
+   $("button#log-out").on('click',function(){
+    
+      $.ajax({
+          url : root + "/auth/logout",
+          method: "GET",
+          username: username,
+          password: password,
+          headers: {
+              "Authorization": "Basic Auth",
+              "Content-Type": "application/x-www-form-urlencoded",
+              "x-auth-token": "document.cookie.value"
+          },
+          success: function(response){
+              alert(response.message);
+              
+              window.location.href="home_page.html";
+          },
+          error: function(){
+              alert("You have to be logged-in in order to log out");
+          }
+      });
+   });
 });
