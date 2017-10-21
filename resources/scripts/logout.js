@@ -21,15 +21,13 @@ $(document).ready(function(){
       $.ajax({
           url : root + "/auth/logout",
           method: "GET",
-        //   username: username,
-        //   password: password,
           headers: {
               "Content-Type": "application/x-www-form-urlencoded",
               "x-auth-token": getCookies(),
           },
           success: function(response){
               alert(response.message);
-              
+              document.cookie="accessToken=";
               window.location.href="home_page.html";
           },
           error: function(error){
