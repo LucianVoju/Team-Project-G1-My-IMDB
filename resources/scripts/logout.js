@@ -7,12 +7,10 @@ $(document).ready(function(){
                     let cookies = {};
                     cookiesArray.forEach(function(c) {
                     let cookie = c.split("=");
-       // console.log('key', cookie[0]);
-       // console.log('value', cookie[1]);
                     cookies[cookie[0]] = cookie[1];
-                });
-                return cookies["accessToken"];
-    };
+                                         });
+           return cookies["accessToken"];      
+          };
     
   let root = "https://ancient-caverns-16784.herokuapp.com";
    
@@ -27,12 +25,12 @@ $(document).ready(function(){
           },
           success: function(response){
               alert(response.message);
-              document.cookie="accessToken=";
-              window.location.href="home_page.html";
+              document.cookie="accessToken=";          
+              window.location.href="home_page.html";    
           },
           error: function(error){
               console.log(error);
-              //alert("You have to be logged-in in order to log out");
+              alert("You have to be logged-in in order to log out");
           }
       });
 
