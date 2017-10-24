@@ -28,10 +28,10 @@ const userController = (function(){
             }
         },
         isLoggedIn: function() {
-            return readCookie("loginToken") ? true:false;
+            return readCookie("accessToken") ? true:false;
         },
         getAuthToken: function() {
-            return readCookie("loginToken")
+            return readCookie("accessToken")
         }
     }
 })();
