@@ -26,17 +26,27 @@ const controller = (function (uiCtrl, requestCtrl, userCtrl) {
 		});
 	}
 
-	let searchAndDisplay = function (url, searchType, searchInput) {
+	let searchAndDisplay = function (url,selectedTypefromDropdown, searchInput) {
 
-		let box = document.querySelector(DOM.articleContainer);
-		while (box.lastChild) {
-			box.removeChild(box.lastChild);
+		let movieContainer, paginationContainer;
+	
+		paginationContainer = document.querySelector(DOM.pagination);
+		movieContainer = document.querySelector(DOM.movieContainer);
+		
+		while (movieContainer.lastChild) {
+			movieContainer.removeChild(movieContainer.lastChild);
+		}
+	
+		while (paginationContainer.lastChild) {
+			paginationContainer.removeChild(paginationContainer.lastChild);
 		}
 
-		requestCtrl.searchMovie(url, searchType, searchInput).then(response => {
+		requestCtrl.getMovies(url,selectedTypefromDropdown,searchInput).then(response => {
 			response.results.forEach(res => {
 				uiCtrl.displayMovies(res);
 			});
+			let pagination = response.pagination;
+			uiCtrl.displayPagination(pagination);
 		});
 	};
 
@@ -86,20 +96,30 @@ const controller = (function (uiCtrl, requestCtrl, userCtrl) {
 
 		//get the selected field and input text
 		input = uiCtrl.getInput();
+		
+		
 		//get the movie array from api and display it to thr ui
-		searchAndDisplay(url, input.type, input.description);
+		searchAndDisplay(url,input.type, input.description);
+		
+		
 		//reset the text box
 		uiCtrl.clearSearchInput();
 	};
 
 	//display the movies on page load
 	let displayMovie = async function () {
-		let movieArr = await requestCtrl.getAllM(url);
-		console.log(movieArr);
-		movieArr.results.forEach((movie) => {
+		let paginationContainer = document.querySelector(DOM.pagination);
+		let movieContainer = document.querySelector(DOM.movieContainer);
+		
+		let movieResponseObject = await requestCtrl.getMovies();
+		console.log(movieResponseObject);
+			movieResponseObject.results.forEach((movie) => {
 			uiCtrl.displayMovies(movie);
 		});
-		setupPageLoadedEventListeners();
+		
+		let paginationResponse = movieResponseObject.pagination;
+			uiCtrl.displayPagination(paginationResponse);
+			setupPageLoadedEventListeners();
 	}
 
 	let consoleLogLogin = async function () {
@@ -114,7 +134,7 @@ const controller = (function (uiCtrl, requestCtrl, userCtrl) {
 		init: function () {
 			setupEventListeners();
 			displayMovie();
-			consoleLogLogin();
+			//consoleLogLogin();
 		}
 	};
 

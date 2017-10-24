@@ -1,0 +1,26 @@
+.movie-delete, .movie-edit{
+    visibility: hidden;
+}
+
+.log-reg{
+    font-size: 1em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    width: 30%;
+    align-items: center;
+}
+
+.log-reg:hover {
+    background-color: white;
+    opacity: 0.8;
+}
+
+.select-search-field{
+    margin-left: 10px;
+}
+
+.search-input{
+    margin-left: 10px;
+}
