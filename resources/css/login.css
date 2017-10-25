@@ -1,32 +1,73 @@
-#container{
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url(../../images/movies.jpg);
+    background-size: cover;
+}
+
+#container {
     width: 50%;
-    border: 3px solid green;
+    height: 400px;
+    float: right;
+    background-color: transparent;
     margin: 0 auto;
+}
+
+.title {
     text-align: center;
+    padding: 50px 0 20px;
 }
 
-input[type=text], input[type=password] {
+.title h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.formBox {
+    width: 63%;
+    height: 400px;
+    float: right;
+}
+
+.formBox p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #fff;
+}
+
+.formBox input {
+    margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+   padding: 12px 20px;
+   margin: 8px 0;
+   display: inline-block;
+   border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #75B9CE;
+    color: #fff;
     padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
+    margin: 8px 70px;
     border: 1px solid #ccc;
-}
-
-/* Set a style for the login button */
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
     cursor: pointer;
+    font-weight: bold;
+    
 }
 
-button:hover {
+input[type="submit"]:hover {
     opacity: 0.8;
 }
 
-error {
-    border: 2px solid red;
-    box-shadow: 0 0 3px red;
+.error {
+    border: 10px solid red;
+    box-shadow: 0 0 6px red;
 }

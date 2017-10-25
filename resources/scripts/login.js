@@ -8,9 +8,13 @@ $(document).ready(function(){
     let username = document.getElementsByName("uname")[0].value;
     let password = document.getElementsByName("psw")[0].value;
     
-     if (username == "" || password == "") {      
-         $("input").addClass("error");
+     if (username == "") {      
+         $("#user").addClass("error");
      } else {
+         if(password == ""){
+             $("#pass").addClass("error");
+         }
+         else {
          $.ajax({
              url: root + "/auth/login",
              method: "POST",
@@ -30,7 +34,7 @@ $(document).ready(function(){
             
          });
         }
-    
+     }
     });  
     
    

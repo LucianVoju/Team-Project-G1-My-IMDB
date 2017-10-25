@@ -2,23 +2,27 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
+        <title>Login form</title>
         <link rel="stylesheet" href="../resources/css/login.css" type="text/css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="../resources/scripts/login.js"></script>
     </head>
     <body>
         <div id="container">
-          <form id="loginForm" name="loginForm" method="post" action="">
-            <label><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            <br>
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-            <br>
-            <button id="loginBtn" type="submit">Login</button>
-          </form>
-        </div>
+            <div class="title">
+                <h1>Login form</h1>
+            </div>
         
+            <div class="formBox">
+               <form id="loginForm" name="loginform" method="post" action="" >
+                    <p>Username</p>
+                    <input type="text" name="uname" id="user" placeholder="Enter username..." />
+                    <p>Password</p>
+                    <input type="password" name="psw" id="pass" placeholder="Enter password..." />
+                    <br/>
+                    <input type="submit" name="loginBtn" value="Login" />
+                </form>
+            </div>
+        </div>
     </body>
 </html>
